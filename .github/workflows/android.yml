@@ -1,0 +1,52 @@
+name: Build Android App
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - android
+jobs:
+  build:
+    name: Release Build
+    runs-on: ubuntu-latest
+    env:
+      SAP_MAVEN_USER: ${{ secrets.SAP_MAVEN_USER }}
+      SAP_MAVEN_PASSWORD: ${{ secrets.SAP_MAVEN_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      
+      - name: Run Lint
+        run: ./gradlew lintDebug # Consider additional tools, such as ktlint for Kotlin projects
+        working-directory: android/CIExample
+
+      - name: Run Tests
+        run: ./gradlew testDebugUnitTest
+        working-directory: android/CIExample
+
+      - name: Fix NDK Version
+        # The grep bit hides 20k+ log lines of progress bar from the build log
+        # https://stackoverflow.com/a/52464819/1821301
+        run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;21.0.6113669" --sdk_root=${ANDROID_SDK_ROOT} | grep -v = || true
+      
+      - name: Decode Key Store
+        env:
+            ANDROID_KEY_STORE: ${{ secrets.ANDROID_KEY_STORE }}
+        run: echo $ANDROID_KEY_STORE | base64 -d > app/my-release-key.jks
+        working-directory: android/CIExample
+
+      - name: Make Release
+        env:
+            ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
+            ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+            ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: ./gradlew assemble
+        working-directory: android/CIExample
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+            name: releaseOutput
+            path: android/CIExample/app/build/outputs/**/*
