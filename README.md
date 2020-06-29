@@ -25,4 +25,4 @@ Feel free to ask questions and to provide feedback in the [issue tracker](/issue
 
 ## License
 
-This project is licensed under Apache-2.0 except as noted otherwise in the LICENSE file.
+Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under the Apache Software License, version 2.0 except as noted otherwise in the LICENSE file.
