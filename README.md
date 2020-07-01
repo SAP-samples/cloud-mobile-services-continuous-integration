@@ -1,6 +1,8 @@
 # SAP Cloud Platform Mobile Services Continuous Integration Examples
 
-Continuous Integration Samples with SAP Cloud Platform Mobile Services SDKs and tools.
+Sample projects and workflow configuration for tools and SDKs shipped available with SAP Cloud Platform Mobile Services. Please follow either of these guides to learn more:
+
+1. [CI Best Practices with SAP: Cloud Platform SDK for Android](TODO)
 
 ## Requirements
 
@@ -10,7 +12,7 @@ Continuous Integration Samples with SAP Cloud Platform Mobile Services SDKs and 
 
 ## Download and Installation
 
-Fork this repository or create your own usiung the [sample Github Workflows](./github/workflows), then follow [this configuration guide](TODO).
+Fork this repository or create your own usiung the [sample Github Workflows](./github/workflows), then follow the respective configuration guide for the tool or SDK of your choice.
 
 ## How to Obtain Support
 
@@ -18,7 +20,6 @@ Feel free to ask questions and to provide feedback in the [issue tracker](/issue
 
 ## To-Do
 
-1. Provide CI example for the SAP Cloud Platform SDK for Android
 1. Provide CI example for the SAP Mobile Platform SDK (packaged apps)
 1. Provide CI example for the SAP Mobile Platform SDK (custom Fiori Client)
 1. Provide CI example for the SAP Cloud Platform SDK for iOS
