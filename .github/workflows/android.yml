@@ -4,7 +4,7 @@ on:
     branches:
       - master
     paths:
-      - android
+      - android/**
 jobs:
   build:
     name: Release Build
