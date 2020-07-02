@@ -2,7 +2,7 @@
 
 Sample projects and workflow configuration for tools and SDKs shipped available with SAP Cloud Platform Mobile Services. Please follow either of these guides to learn more:
 
-1. [CI Best Practices with SAP: Cloud Platform SDK for Android](TODO)
+1. [CI Best Practices with SAP: Cloud Platform SDK for Android](https://blogs.sap.com/2020/07/02/continuous-integration-ci-best-practices-with-sap-cloud-platform-sdk-for-android/)
 
 ## Requirements
 
