@@ -1,0 +1,42 @@
+name: Build Fiori Client
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - fioriClient/**
+jobs:
+  build:
+    name: Release Build
+    runs-on: ubuntu-latest
+    env:
+      SAP_NPM_TOKEN: ${{ secrets.SAP_NPM_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      
+      - name: Install Dependencies
+        run: npm install
+        working-directory: fioriClient
+      
+      - name: Decode Key Store
+        env:
+            ANDROID_KEY_STORE: ${{ secrets.ANDROID_KEY_STORE }}
+        run: echo $ANDROID_KEY_STORE | base64 -d > my-release-key.jks
+        working-directory: fioriClient
+
+      - name: Make Release
+        env:
+            ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
+            ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+            ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: npm run build
+        working-directory: fioriClient
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+            name: releaseOutput
+            path: fioriClient/project/platforms/android/app/build/outputs/**/*

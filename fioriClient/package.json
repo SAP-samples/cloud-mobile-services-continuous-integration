@@ -1,0 +1,25 @@
+{
+  "name": "custom-fiori-client",
+  "version": "1.0.0",
+  "description": "Custom SAP Fiori Client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fc:configTemplate": "cp ./node_modules/@sap/create_fiori_client/config.json config.template.json",
+    "fc:appConfigTemplate": "cp ./node_modules/@sap/create_fiori_client/template/www/appConfig.js appConfig.template.js",
+    "fc:generate": "node ./node_modules/@sap/create_fiori_client/create_fiori_client.js config.json",
+    "fc:copyAppConfig": "cp -f appConfig.js project/www/appConfig.js",
+    "build": "rm -rf project && npm run fc:generate && npm run fc:copyAppConfig && npm run cordova:prepare && npm run cordova:buildAndroid",
+    "cordova:prepare": "cd project && cordova prepare",
+    "cordova:buildAndroid": "cd project && cordova build android --release",
+    "cordova:signAndroid": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.jks -keypass $ANDROID_KEY_PASSWORD -storepass $ANDROID_STORE_PASSWORD -signedjar project/platforms/android/app/build/outputs/apk/release/app-release.apk project/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk $ANDROID_KEY_ALIAS"
+  },
+  "author": "SAP SE",
+  "license": "SEE LICENSE IN ../LICENSE",
+  "devDependencies": {
+    "@sap/create_fiori_client": "^4.3.1",
+    "cordova": "^9.0.0",
+    "cordova-ios": "^5.0.0",
+    "rimraf": "^3.0.2"
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "packageName": "com.sap.ciexample",
+    "targetFolder": "project",
+    "appName": "com.sap.CIExample",
+    "platforms": ["ios", "android"],
+    "cordovaPluginIncludes" : ["cordova-plugin-wkwebview-engine"],
+    "cordovaPluginExcludes" : ["@sap/kapsel-plugin-push"],
+    "crosswalkEnabled" : false
+}

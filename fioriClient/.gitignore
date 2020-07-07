@@ -1,0 +1,9 @@
+node_modules
+
+# Option 1: Regenerate entire Fiori Client whenever the project is built
+project/
+
+# Option 2: Keep generated project under source control
+# project/platforms
+# project/plugins
+# project/node_modules
