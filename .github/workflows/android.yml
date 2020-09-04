@@ -5,6 +5,8 @@ on:
       - master
     paths:
       - android/**
+  workflow_dispatch: true
+    
 jobs:
   build:
     name: Release Build
