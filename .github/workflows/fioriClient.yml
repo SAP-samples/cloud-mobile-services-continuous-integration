@@ -2,7 +2,7 @@ name: Build Fiori Client
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - fioriClient/**
   workflow_dispatch:
