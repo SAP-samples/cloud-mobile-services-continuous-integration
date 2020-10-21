@@ -1,5 +1,7 @@
 # SAP Cloud Platform Mobile Services Continuous Integration Examples
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-mobile-services-continuous-integration)](https://api.reuse.software/info/github.com/SAP-samples/cloud-mobile-services-continuous-integration)
+
 Sample projects and workflow configuration for tools and SDKs shipped available with SAP Cloud Platform Mobile Services. Please follow either of these guides to learn more:
 
 1. [CI Best Practices with SAP: Cloud Platform SDK for Android](https://blogs.sap.com/2020/07/02/continuous-integration-ci-best-practices-with-sap-cloud-platform-sdk-for-android/)
@@ -14,7 +16,13 @@ Sample projects and workflow configuration for tools and SDKs shipped available 
 
 ## Download and Installation
 
-Fork this repository or create your own usiung the [sample Github Workflows](./github/workflows), then follow the respective configuration guide for the tool or SDK of your choice.
+Fork this repository or create your own using the [sample Github Workflows](.github/workflows), then follow the respective configuration guide for the tool or SDK of your choice.
+
+### License and Copyright Compliance Checks
+
+* Requires any version of Python and `virtualenv`: `pip install virtualenv --user`
+* Run `npm install` to set up the [Reuse tool](https://github.com/fsfe/reuse-tool)
+* Run `npm run reuse:lint` to verify compliance
 
 ## How to Obtain Support
 

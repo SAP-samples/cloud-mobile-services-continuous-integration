@@ -1,0 +1,41 @@
+{
+  "name": "cloud-mobile-services-continuous-integration",
+  "version": "1.0.0",
+  "description": "Continuous Integration examples using SAP Cloud Platform Mobile Services tools and SDKs",
+  "main": " ",
+  "scripts": {
+    "postinstall": "node ./bin/venv.js",
+    "reuse:lint": "node ./bin/reuseLint.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SAP-samples/cloud-mobile-services-continuous-integration.git"
+  },
+  "keywords": [
+    "Continuous",
+    "Integration",
+    "SAP",
+    "Cloud",
+    "Platform",
+    "Mobile",
+    "Services",
+    "Fiori",
+    "Client",
+    "SAP",
+    "Cloud",
+    "Platform",
+    "SDK",
+    "for",
+    "Android"
+  ],
+  "author": "SAP SE",
+  "license": "SEE LICENSE IN LICENSES",
+  "bugs": {
+    "url": "https://github.com/SAP-samples/cloud-mobile-services-continuous-integration/issues"
+  },
+  "homepage": "https://github.com/SAP-samples/cloud-mobile-services-continuous-integration#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^14.14.0"
+  }
+}

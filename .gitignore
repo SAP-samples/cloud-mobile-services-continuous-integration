@@ -59,5 +59,7 @@ $RECYCLE.BIN/
 # Custom
 
 *.jks
+node_modules
+venv
 
 # End of https://www.toptal.com/developers/gitignore/api/macOS,windows
