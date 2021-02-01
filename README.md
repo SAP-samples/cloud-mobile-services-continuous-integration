@@ -7,7 +7,7 @@ Sample projects and workflow configuration for tools and SDKs shipped available 
 1. [CI Best Practices with SAP: Cloud Platform SDK for Android](https://blogs.sap.com/2020/07/02/continuous-integration-ci-best-practices-with-sap-cloud-platform-sdk-for-android/)
 1. [CI Best Practices with SAP: Custom Fiori Client](https://blogs.sap.com/2020/07/08/continuous-integration-ci-best-practices-with-sap-custom-fiori-client)
     * Note: Currently Android only
-
+1. [Previous Series on Jenkins CI with Cloud Platform SKD for iOS](https://blogs.sap.com/2020/06/15/continuous-integration-ci-best-practices-with-sap-cloud-platform-sdk-for-ios/)
 ## Requirements
 
 1. You are familiar with [SAP Cloud Platform Mobile Services](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/index.html) and its features.
@@ -29,10 +29,6 @@ Fork this repository or create your own using the [sample Github Workflows](.git
 Feel free to ask questions and to provide feedback in the [issue tracker](/issues).
 
 ## To-Do
-
-1. Provide CI example for the SAP Mobile Platform SDK (packaged apps)
-1. Provide CI example for the SAP Cloud Platform SDK for iOS
-1. Provide CI example for custom Fiori Cloients (iOS)
 
 ## License
 
