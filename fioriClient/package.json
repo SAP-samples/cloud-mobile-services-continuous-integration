@@ -19,7 +19,7 @@
   "devDependencies": {
     "@sap/create_fiori_client": "^4.3.1",
     "cordova": "^9.0.0",
-    "cordova-ios": "^5.0.0",
+    "cordova-ios": "^7.0.0",
     "rimraf": "^3.0.2"
   }
 }
